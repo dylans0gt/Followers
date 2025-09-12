@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Progress Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .progress-container {
+      width: 80%;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .progress-bar {
+      height: 30px;
+      width: 0;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      border-radius: 25px;
+      transition: width 1s ease-in-out;
+    }
+
+    .youtube {
+      background: #FF0000;
+    }
+
+    .instagram {
+      background: #E1306C;
+    }
+
+    .tiktok {
+      background: #010101;
+    }
+
+    .label {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Social Media Followers Progress</h1>
+
+  <!-- YouTube -->
+  <div class="progress-container">
+    <div id="youtubeBar" class="progress-bar youtube"></div>
+  </div>
+  <div class="label" id="youtubeLabel"></div>
+
+  <!-- Instagram -->
+  <div class="progress-container">
+    <div id="instagramBar" class="progress-bar instagram"></div>
+  </div>
+  <div class="label" id="instagramLabel"></div>
+
+  <!-- TikTok -->
+  <div class="progress-container">
+    <div id="tiktokBar" class="progress-bar tiktok"></div>
+  </div>
+  <div class="label" id="tiktokLabel"></div>
+
+  <script>
+    /* ================================
+       EDIT THESE NUMBERS TO UPDATE
+    ================================== */
+    const youtubeFollowers   = 5230;
+    const youtubeGoal        = 20000;
+
+    const instagramFollowers = 7430;
+    const instagramGoal      = 10000;
+
+    const tiktokFollowers    = 3120;
+    const tiktokGoal         = 5000;
+
+    function updateBar(id, labelId, followers, goal, platform) {
+      const percentage = Math.min((followers / goal) * 100, 100);
+      const bar = document.getElementById(id);
+      const label = document.getElementById(labelId);
+      bar.style.width = percentage + "%";
+      bar.textContent = Math.floor(percentage) + "%";
+      label.textContent = `${platform}: ${followers.toLocaleString()} / ${goal.toLocaleString()}`;
+    }
+
+    updateBar("youtubeBar", "youtubeLabel", youtubeFollowers, youtubeGoal, "YouTube");
+    updateBar("instagramBar", "instagramLabel", instagramFollowers, instagramGoal, "Instagram");
+    updateBar("tiktokBar", "tiktokLabel", tiktokFollowers, tiktokGoal, "TikTok");
+  </script>
+</body>
+</html>
