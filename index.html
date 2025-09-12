@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Progress Tracker</title>
+  <title>gizm01's stats</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      font-family: Oswald, sans-serif;
+      background-color: #010814;
       color: #fff;
       text-align: center;
       padding: 40px;
@@ -45,17 +45,28 @@
     }
 
     .tiktok {
-      background: #010101;
+      background: #eb0edc;
     }
 
     .label {
       margin-top: 8px;
       font-weight: bold;
     }
+
+    @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+  }
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
   </style>
 </head>
 <body>
-  <h1>Social Media Followers Progress</h1>
+  <h1>@prod.gizm01 | stats</h1>
+  <h1>current goal: 200</h1>
 
   <!-- YouTube -->
   <div class="progress-container">
@@ -75,18 +86,20 @@
   </div>
   <div class="label" id="tiktokLabel"></div>
 
+  <h1>run it up!</h1>
+
   <script>
     /* ================================
        EDIT THESE NUMBERS TO UPDATE
     ================================== */
-    const youtubeFollowers   = 5230;
-    const youtubeGoal        = 20000;
+    const youtubeFollowers   = 119;
+    const youtubeGoal        = 200;
 
-    const instagramFollowers = 7430;
-    const instagramGoal      = 10000;
+    const instagramFollowers = 81;
+    const instagramGoal      = 200;
 
-    const tiktokFollowers    = 3120;
-    const tiktokGoal         = 5000;
+    const tiktokFollowers    = 186;
+    const tiktokGoal         = 200;
 
     function updateBar(id, labelId, followers, goal, platform) {
       const percentage = Math.min((followers / goal) * 100, 100);
